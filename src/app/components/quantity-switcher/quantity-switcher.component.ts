@@ -15,7 +15,7 @@ export class QuantitySwitcherComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    for (let i = 1; i <= 4; i++) {
+    for (let i = 1; i <= 3; i++) {
       this.buttons.push({
         'id': i,
         'quantity': i*2,
