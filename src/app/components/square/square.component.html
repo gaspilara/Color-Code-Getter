@@ -1,0 +1,5 @@
+<div class="bg" name="bg" [ngStyle]="{ 'backgroundColor': colorName }">
+  <input class="nameColor" disabled type="text" [(ngModel)]="colorName">
+  <input class="btnColor" type="color" [(ngModel)]="colorName">
+  <button class="btnCopy" [cdkCopyToClipboard]="colorName" (click)="showCopyMotion()">COPY</button>
+</div>

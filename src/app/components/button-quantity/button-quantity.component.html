@@ -1,0 +1,4 @@
+<button (click)="onQuantityChange()">
+  <ng-container *ngIf="button.quantity<=6"> {{button.quantity}} </ng-container>
+  <ng-container *ngIf="button.quantity>6"> N </ng-container>
+</button>
