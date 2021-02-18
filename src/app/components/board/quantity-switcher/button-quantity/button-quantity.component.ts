@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { QuantityService } from '../../services/quantity.service'
-import { Button } from '../../models/button.model'
+import { QuantityService } from '../../../../services/quantity.service'
+import { Button } from '../../../../models/button.model'
 
 @Component({
   selector: 'button-quantity-component',

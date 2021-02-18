@@ -1,0 +1,44 @@
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Color } from '../models/color.model'
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ColorService {
+
+  // public _color: string = '';
+  // private _colorSubject: BehaviorSubject<string> = new BehaviorSubject(this._color);
+  // public color: Observable<string> = this._colorSubject.asObservable();
+
+  color: Color;
+
+  constructor() {
+    this.color = new Color();
+  }
+
+  convertToRGB(hex: string): any {
+    hex.charAt(0) === '#' ? hex = hex.substr(1) : '';
+    (hex.length < 2) || (hex.length > 6) ? '' : '';
+    let values = hex.split('');
+    let r, g, b;
+    if (hex.length === 2) {
+        r = parseInt(values[0].toString() + values[1].toString(), 16);
+        g = r;
+        b = r;
+    } else if (hex.length === 3) {
+        r = parseInt(values[0].toString() + values[0].toString(), 16);
+        g = parseInt(values[1].toString() + values[1].toString(), 16);
+        b = parseInt(values[2].toString() + values[2].toString(), 16);
+    } else if (hex.length === 6) {
+        r = parseInt(values[0].toString() + values[1].toString(), 16);
+        g = parseInt(values[2].toString() + values[3].toString(), 16);
+        b = parseInt(values[4].toString() + values[5].toString(), 16);
+    } else {
+        return '';
+    }
+    // return ('RGB ('+r+', '+g+', '+b+')');
+    return [r, g, b];
+  }
+
+}

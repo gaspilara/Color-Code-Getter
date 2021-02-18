@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Button } from '../../models/button.model';
+import { Button } from '../../../models/button.model';
 
 @Component({
   selector: 'quantity-switcher',

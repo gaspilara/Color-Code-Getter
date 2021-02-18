@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 // SERVICES
-import { QuantityService } from '../../services/quantity.service';
+import { QuantityService } from '../../../services/quantity.service';
 // MODELS
-import { Square } from '../../models/square.model'
+import { Square } from '../../../models/square.model'
 
 @Component({
   selector: 'squares-container',
