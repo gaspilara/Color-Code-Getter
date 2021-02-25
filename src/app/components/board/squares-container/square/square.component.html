@@ -1,23 +1,25 @@
 <div class="bg" name="bg" [ngStyle]="{ 'backgroundColor': color.hex }">
 
-  <div class="">
-    <input class="nameColor" disabled type="text" [ngStyle]="{ 'transform': scaleRGB }" [(ngModel)]="color.RGB">
-    <button class="btnCopy"
-      [cdkCopyToClipboard]="rgbToCopy"
-      (click)="showCopyRGBMotion()"
-      >
-      <i class="far fa-copy"></i>
-    </button>
-  </div>
+  <div class="info-color-container">
+    <div class="info-color">
+      <input class="nameColor" disabled type="text" [ngStyle]="{ 'transform': scaleRGB }" [(ngModel)]="color.RGB">
+      <button class="btnCopy"
+        [cdkCopyToClipboard]="rgbToCopy"
+        (click)="showCopyRGBMotion()"
+        >
+        <i class="far fa-copy"></i>
+      </button>
+    </div>
 
-  <div class="">
-    <input class="nameColor" disabled type="text" [ngStyle]="{ 'transform': scaleHex }" [(ngModel)]="color.hex">
-    <button class="btnCopy"
-      [cdkCopyToClipboard]="color.hex"
-      (click)="showCopyHexMotion()"
-      >
-      <i class="far fa-copy"></i>
-    </button>
+    <div class="info-color">
+      <input class="nameColor" disabled type="text" [ngStyle]="{ 'transform': scaleHex }" [(ngModel)]="color.hex">
+      <button class="btnCopy"
+        [cdkCopyToClipboard]="color.hex"
+        (click)="showCopyHexMotion()"
+        >
+        <i class="far fa-copy"></i>
+      </button>
+    </div>
   </div>
 
   <input class="btnColor" type="color" [(ngModel)]="color.hex" [ngModel]="onColorChange()">

@@ -13,6 +13,14 @@
     justify-content: center
     align-items: center
 
+.info-color-container
+    position: absolute
+    margin-top: -20%
+
+.info-color
+    display: flex
+    align-items: center
+    margin: 1em
 
 .btnSwitch, .btnColor, .btnSwitch-disabled
     width: 50px
@@ -22,14 +30,14 @@
     outline: none
 
 .btnColor
-  width: 20px
-  height: 20px
-  border: none
-  padding: 0
+    width: 20px
+    height: 20px
+    border: none
+    padding: 0
 .btnColor:hover
-  cursor: crosshair
+    cursor: crosshair
 input[type="color"]::-webkit-color-swatch
-  margin: -3em
+    margin: -3em
 
 .btnSwitch
     margin-top: 2em
@@ -39,15 +47,12 @@ input[type="color"]::-webkit-color-swatch
     margin-top: 2em
 
 .nameColor
-    margin-top: 2em
     color: white
-    font-size: x-large
-    background: none
+    font-size: large
+    background: black
     border: none
     text-align: center
     outline: none
-    width: 100px
-    width: fit-content
     width: auto
 
 .btnCopy
@@ -55,13 +60,12 @@ input[type="color"]::-webkit-color-swatch
     height: 40px
     border: 1px solid black
     outline: none
-    margin-top: 2em
-    margin-bottom: 2em
     border-radius: 10em
     border: none
     color: white
     background-color: black
-
+    margin-left: 1em
+    z-index: 1
 .btnCopy:hover
     border: 1px solid white
     color: black

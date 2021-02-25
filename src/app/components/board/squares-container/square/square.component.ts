@@ -38,12 +38,14 @@ export class SquareComponent implements OnInit {
     this.scaleHex = 'scale(1.3)';
     setTimeout(() => { this.scaleHex = 'scale(1.2)'; }, 70);
     setTimeout(() => { this.scaleHex = 'scale(1.1)'; }, 100);
+    setTimeout(() => { this.scaleHex = 'scale(1)'; }, 125);
   }
 
   showCopyRGBMotion() {
     this.scaleRGB = 'scale(1.3)';
     setTimeout(() => { this.scaleRGB = 'scale(1.2)'; }, 70);
     setTimeout(() => { this.scaleRGB = 'scale(1.1)'; }, 100);
+    setTimeout(() => { this.scaleRGB = 'scale(1)'; }, 125);
   }
 
 }
