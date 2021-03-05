@@ -1,0 +1,12 @@
+<div class="info-color">
+
+  <div 
+    type="text" 
+    class="nameColor"
+    [cdkCopyToClipboard]="toCopy" 
+    (click)="showCopyMotion()" 
+  >
+    <p [ngStyle]="{ 'transform': scaleValue }">{{colorValue}}</p>
+  </div>
+
+</div>

@@ -14,8 +14,6 @@ export class SquareComponent implements OnInit {
   color: Color;
   hexaToUpper: string = '';
   rgbToCopy: string = '';
-  scaleHex: string = '';
-  scaleRGB: string = '';
 
   constructor(private colorService: ColorService) {
     this.square = new Square();
@@ -32,20 +30,6 @@ export class SquareComponent implements OnInit {
       this.color.RGB = 'RGB ('+arrayRGB[0]+', '+arrayRGB[1]+', '+arrayRGB[2]+')';
     }
     this.rgbToCopy = arrayRGB[0]+' '+arrayRGB[1]+' '+arrayRGB[2];
-  }
-
-  showCopyHexMotion() {
-    this.scaleHex = 'scale(1.3)';
-    setTimeout(() => { this.scaleHex = 'scale(1.2)'; }, 70);
-    setTimeout(() => { this.scaleHex = 'scale(1.1)'; }, 100);
-    setTimeout(() => { this.scaleHex = 'scale(1)'; }, 125);
-  }
-
-  showCopyRGBMotion() {
-    this.scaleRGB = 'scale(1.3)';
-    setTimeout(() => { this.scaleRGB = 'scale(1.2)'; }, 70);
-    setTimeout(() => { this.scaleRGB = 'scale(1.1)'; }, 100);
-    setTimeout(() => { this.scaleRGB = 'scale(1)'; }, 125);
   }
 
 }
