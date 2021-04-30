@@ -22,21 +22,22 @@ export class QuantityService {
   }
 
   createComponent(quantity: number) {
+    console.log(quantity)
     if (this._components.length === 0) {
-      for (let i=0;i<2;i++) {
+      for (let i = 0; i < 2; i++) {
         this._components.push(this.square);
       }
     } else {
-      switch(quantity) {
+      switch (quantity) {
         case 2: {
-          switch(this._components.length) {
+          switch (this._components.length) {
             case 4: {
-              for (let i=0;i<2;i++) {
+              for (let i = 0; i < 2; i++) {
                 this._components.pop();
               }
             }; break;
             case 6: {
-              for (let i=0;i<4;i++) {
+              for (let i = 0; i < 4; i++) {
                 this._components.pop();
               }
             }; break;
@@ -44,14 +45,14 @@ export class QuantityService {
         }; break;
 
         case 4: {
-          switch(this._components.length) {
+          switch (this._components.length) {
             case 2: {
-              for (let i=0;i<2;i++) {
+              for (let i = 0; i < 2; i++) {
                 this._components.push(this.square);
               }
             }; break;
             case 6: {
-              for (let i=0;i<2;i++) {
+              for (let i = 0; i < 2; i++) {
                 this._components.pop();
               }
             }; break;
@@ -59,14 +60,14 @@ export class QuantityService {
         }; break;
 
         case 6: {
-          switch(this._components.length) {
+          switch (this._components.length) {
             case 2: {
-              for (let i=0;i<4;i++) {
+              for (let i = 0; i < 4; i++) {
                 this._components.push(this.square);
               }
             }; break;
             case 4: {
-              for (let i=0;i<2;i++) {
+              for (let i = 0; i < 2; i++) {
                 this._components.push(this.square);
               }
             }; break;

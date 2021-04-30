@@ -1,0 +1,24 @@
+<div class="input-container" (click)="openColorSelector()"></div>
+
+<ng-container *ngIf="showSelector">
+  
+  <div class="selector-container">
+    
+    <section class="color-section">
+      <div class="color-container-1"></div>
+      <!-- <div class="color-container-2"></div> -->
+    </section>
+    
+    <section class="range-x-section">
+      <div>
+        <input type="range" name="range-x">
+      </div>
+    </section>
+
+    <section class="range-v-section">
+        <input type="range" name="range-y">
+    </section>
+  
+  </div>
+
+</ng-container>

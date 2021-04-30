@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Color } from 'src/app/models/color.model';
-import { Square } from '../../../../models/square.model'
-import { ColorService } from '../../../../services/color.service'
+import { Color } from '../../models/color.model';
+import { Square } from '../../models/square.model'
+import { ColorService } from '../../services/color.service'
 
 @Component({
   selector: 'square-component',
@@ -10,18 +10,14 @@ import { ColorService } from '../../../../services/color.service'
 })
 export class SquareComponent implements OnInit {
 
-  @Input() square: Square;
-  color: Color;
+  @Input() square: Square = new Square();
+  color: Color = new Color();
   hexaToUpper: string = '';
   rgbToCopy: string = '';
 
-  constructor(private colorService: ColorService) {
-    this.square = new Square();
-    this.color = new Color();
-  }
+  constructor(private colorService: ColorService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onColorChange() {
     this.color.hex = this.color.hex.toUpperCase();

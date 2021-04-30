@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { QuantityService } from '../../../../services/quantity.service'
-import { Button } from '../../../../models/button.model'
+import { QuantityService } from '../../services/quantity.service'
+import { Button } from '../../models/button.model'
 
 @Component({
   selector: 'button-quantity-component',
@@ -15,7 +15,7 @@ export class ButtonQuantityComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.button.quantity === 0 ? this.button.quantity = 2 : this.button.quantity;
+    this.button.quantity = this.button.quantity === 0 ? 2 : this.button.quantity;
   }
 
   onQuantityChange(): void {

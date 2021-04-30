@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Color } from 'src/app/models/color.model';
+import { Color } from '../../models/color.model';
 
 @Component({
   selector: 'info-color-component',
@@ -11,13 +11,12 @@ export class InfoColorComponent implements OnInit {
   @Input() toCopy: string = '';
   @Input() colorValue: string = '';
 
-  color: Color;
+  color: Color = new Color();
   hexaToUpper: string = '';
   rgbToCopy: string = '';
   scaleValue: string = '';
 
   constructor() {
-    this.color = new Color();
   }
 
   ngOnInit(): void {
