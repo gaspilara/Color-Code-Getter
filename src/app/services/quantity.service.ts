@@ -7,7 +7,7 @@ import { Square } from '../models/square.model';
 })
 export class QuantityService {
 
-  public _quantity: number = 2;
+  public _quantity: number = 0;
   private _quantitySubject: BehaviorSubject<number> = new BehaviorSubject(this._quantity);
   public quantity: Observable<number> = this._quantitySubject.asObservable();
 
@@ -15,65 +15,51 @@ export class QuantityService {
   private _componentsSubject: BehaviorSubject<Square[]> = new BehaviorSubject(this._components);
   public components: Observable<Square[]> = this._componentsSubject.asObservable();
 
-  square: Square;
+  square: Square = new Square();
 
   constructor() {
-    this.square = new Square();
+  }
+
+  setQuantity(quantity: number) {
+    this._quantity = quantity;
   }
 
   createComponent(quantity: number) {
-    console.log(quantity)
+    this.setQuantity(quantity);
     if (this._components.length === 0) {
-      for (let i = 0; i < 2; i++) {
+      for (let i = 0; i < 1; i++) {
         this._components.push(this.square);
       }
     } else {
       switch (quantity) {
+        case 1: {
+          switch (this._components.length) {
+            case 2: { for (let i = 0; i < 1; i++) { this._components.pop(); }}; break;
+            case 4: { for (let i = 0; i < 3; i++) { this._components.pop(); }}; break;
+            case 6: { for (let i = 0; i < 5; i++) { this._components.pop(); }}; break;
+          }
+        }; break;
         case 2: {
           switch (this._components.length) {
-            case 4: {
-              for (let i = 0; i < 2; i++) {
-                this._components.pop();
-              }
-            }; break;
-            case 6: {
-              for (let i = 0; i < 4; i++) {
-                this._components.pop();
-              }
-            }; break;
+            case 1: { for (let i = 0; i < 1; i++) { this._components.push(this.square); } }; break;
+            case 4: { for (let i = 0; i < 2; i++) { this._components.pop(); } }; break;
+            case 6: { for (let i = 0; i < 4; i++) { this._components.pop(); } }; break;
           }
         }; break;
-
         case 4: {
           switch (this._components.length) {
-            case 2: {
-              for (let i = 0; i < 2; i++) {
-                this._components.push(this.square);
-              }
-            }; break;
-            case 6: {
-              for (let i = 0; i < 2; i++) {
-                this._components.pop();
-              }
-            }; break;
+            case 1: { for (let i = 0; i < 3; i++) { this._components.push(this.square); } }; break;
+            case 2: { for (let i = 0; i < 2; i++) { this._components.push(this.square); } }; break;
+            case 6: { for (let i = 0; i < 2; i++) { this._components.pop(); } }; break;
           }
         }; break;
-
         case 6: {
           switch (this._components.length) {
-            case 2: {
-              for (let i = 0; i < 4; i++) {
-                this._components.push(this.square);
-              }
-            }; break;
-            case 4: {
-              for (let i = 0; i < 2; i++) {
-                this._components.push(this.square);
-              }
-            }; break;
+            case 1: { for (let i = 0; i < 5; i++) { this._components.push(this.square); } }; break;
+            case 2: { for (let i = 0; i < 4; i++) { this._components.push(this.square); } }; break;
+            case 4: { for (let i = 0; i < 2; i++) { this._components.push(this.square); } }; break;
           }
         }; break;
-
       }
     }
   }

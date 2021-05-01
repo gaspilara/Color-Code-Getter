@@ -21,10 +21,15 @@ export class SquaresContainerComponent implements OnInit {
     this.quantityService.createComponent(this.quantity);
     this.quantityService.quantity.subscribe(data => {
       this.quantity = data;
+      console.log(this.quantity)
     })
     this.quantityService.components.subscribe(data => {
       this.components = data;
     })
+  }
+
+  sadf() {
+    console.log(this.quantity)
   }
 
 }

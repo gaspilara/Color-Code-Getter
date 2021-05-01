@@ -1,25 +1,20 @@
 <nav class="nav">
   <div class="nav-container">
-    <!-- <ng-container *ngFor="let button of buttons">
-      <button-quantity-component [button]="button"></button-quantity-component>
-    </ng-container> -->
-      <button class="btn-switch" (click)="switchView()">
-        <ng-container *ngIf="view_1">
-          <div class="icon-switch-2"><div></div><div></div></div>
-        </ng-container>
-        <ng-container *ngIf="view_2">
-          <!-- <div class="icon-switch-4"><div></div><div></div></div> -->
-          <h1>cuatro</h1>
-        </ng-container>
-        <ng-container *ngIf="view_4">
-          <!-- <div class="icon-switch-6"><div></div><div></div></div> -->
-          <h1>seis</h1>
-        </ng-container>
-        <ng-container *ngIf="view_6">
-          <!-- <div class="icon-switch-1"><div></div><div></div></div> -->
-          <h1>uno</h1>
-        </ng-container>
-      </button>
+
+    <button class="btn-switch" (click)="switchView()">
+      <ng-container *ngIf="view_1">
+        <div class="icon-switch-2"><div></div><div></div></div>
+      </ng-container>
+      <ng-container *ngIf="view_2">
+        <div class="icon-switch-4"><div></div><div></div><div></div><div></div></div>
+      </ng-container>
+      <ng-container *ngIf="view_4">
+        <div class="icon-switch-6"><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      </ng-container>
+      <ng-container *ngIf="view_6">
+        <div class="icon-switch-1"><div></div></div>
+      </ng-container>
+    </button>
   </div>
 </nav>
 

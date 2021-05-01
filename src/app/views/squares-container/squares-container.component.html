@@ -1,5 +1,32 @@
-<section class="bg-section grid-columns-2">
+<section class="bg-section grid-columns-2" (click)="sadf()">
   <ng-container *ngFor="let square of components">
     <square-component [square]="square"></square-component>
+  </ng-container> 
+  
+<!-- 
+  <ng-container *ngIf="quantity != null">
+    <square-component></square-component>
   </ng-container>
+  
+  <ng-container *ngIf="quantity === 2 || quantity === 4 || quantity === 6">
+    <square-component></square-component>
+  </ng-container>
+  
+  <ng-container *ngIf="quantity === 4 || quantity === 6">
+    <square-component></square-component>
+  </ng-container>
+  
+  <ng-container *ngIf="quantity === 4 || quantity === 6">
+    <square-component></square-component>
+  </ng-container>
+  
+  <ng-container *ngIf="quantity === 6">
+    <square-component></square-component>
+  </ng-container>
+  
+  <ng-container *ngIf="quantity === 6">
+    <square-component></square-component>
+  </ng-container>
+-->
+  
 </section>
