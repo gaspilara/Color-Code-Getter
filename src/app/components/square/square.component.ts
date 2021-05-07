@@ -17,7 +17,9 @@ export class SquareComponent implements OnInit {
 
   constructor(private colorService: ColorService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.square.display = true;
+  }
 
   onColorChange() {
     this.color.hex = this.color.hex.toUpperCase();

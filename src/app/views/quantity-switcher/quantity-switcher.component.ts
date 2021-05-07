@@ -38,7 +38,6 @@ export class QuantitySwitcherComponent implements OnInit {
     else if (this.view_1) { this.setInitialState(); this.view_2 = true; this.view = 2; }
     this.quantityService.quantity.subscribe( r => { 
       this.quantityService.createComponent(this.view); 
-      // console.log(this.quantityService.quantity)
     })
   }
 

@@ -19,9 +19,9 @@ export class ButtonQuantityComponent implements OnInit {
   }
 
   onQuantityChange(): void {
-    this.quantityService.quantity.subscribe(data => {
-      this.quantityService.createComponent(this.button.quantity);
-    })
+    // this.quantityService.quantity.subscribe(data => {
+    //   this.quantityService.createComponent(this.button.quantity);
+    // })
   }
 
 }

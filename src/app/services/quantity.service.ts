@@ -18,49 +18,47 @@ export class QuantityService {
   square: Square = new Square();
 
   constructor() {
+    this.initComponents();
+    this.createComponent(1);
   }
-
-  setQuantity(quantity: number) {
-    this._quantity = quantity;
+  
+  initComponents() {
+    if (this._components.length === 0) {
+      for (let i = 0; i < 6; i++) {
+        this.square.id = i + 1;
+        this.square.display = this.square.id === 1 ? true : false;
+        this._components.push(this.square);
+      }
+    }
   }
 
   createComponent(quantity: number) {
-    this.setQuantity(quantity);
-    if (this._components.length === 0) {
-      for (let i = 0; i < 1; i++) {
-        this._components.push(this.square);
-      }
-    } else {
-      switch (quantity) {
-        case 1: {
-          switch (this._components.length) {
-            case 2: { for (let i = 0; i < 1; i++) { this._components.pop(); }}; break;
-            case 4: { for (let i = 0; i < 3; i++) { this._components.pop(); }}; break;
-            case 6: { for (let i = 0; i < 5; i++) { this._components.pop(); }}; break;
-          }
-        }; break;
-        case 2: {
-          switch (this._components.length) {
-            case 1: { for (let i = 0; i < 1; i++) { this._components.push(this.square); } }; break;
-            case 4: { for (let i = 0; i < 2; i++) { this._components.pop(); } }; break;
-            case 6: { for (let i = 0; i < 4; i++) { this._components.pop(); } }; break;
-          }
-        }; break;
-        case 4: {
-          switch (this._components.length) {
-            case 1: { for (let i = 0; i < 3; i++) { this._components.push(this.square); } }; break;
-            case 2: { for (let i = 0; i < 2; i++) { this._components.push(this.square); } }; break;
-            case 6: { for (let i = 0; i < 2; i++) { this._components.pop(); } }; break;
-          }
-        }; break;
-        case 6: {
-          switch (this._components.length) {
-            case 1: { for (let i = 0; i < 5; i++) { this._components.push(this.square); } }; break;
-            case 2: { for (let i = 0; i < 4; i++) { this._components.push(this.square); } }; break;
-            case 4: { for (let i = 0; i < 2; i++) { this._components.push(this.square); } }; break;
-          }
-        }; break;
-      }
+    this._quantitySubject = new BehaviorSubject(quantity);
+    this.quantity = this._quantitySubject.asObservable();
+
+    switch (quantity) {
+      case 1: { 
+        this._components.filter( r => {
+          r.display = r.id === quantity ? true : false
+          if (r.id === 1) r.display = true;
+          console.log (r);
+        }); break; 
+      } 
+      case 2: { 
+        this._components.filter( r => {
+          r.display = r.id > 0 && r.id < quantity+1 ? true : false
+        }); break; 
+      } 
+      case 4: { 
+        this._components.filter( r => {
+          r.display = r.id > 0 && r.id < quantity+1 ? true : false
+        }); break; 
+      } 
+      case 6: { 
+        this._components.filter( r => {
+          r.display = r.id > 0 && r.id < quantity+1 ? true : false
+        }); break; 
+      } 
     }
   }
 
