@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Color } from 'src/app/models/color.model';
 
 @Component({
   selector: 'input-color-component',

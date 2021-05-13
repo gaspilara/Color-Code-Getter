@@ -1,6 +1,9 @@
 <section 
   class="bg-section grid-columns-2" 
-  [ngClass]="{ 'grid-columns-3': components.length === 6, 'grid-columns-1': components.length === 1 }" 
+  [ngClass]="{ 
+    'grid-columns-3': components.length === 6, 
+    'grid-columns-1': components.length === 1 
+  }" 
 >
   <ng-container *ngFor="let square of components">
     <square-component [square]="square"></square-component>

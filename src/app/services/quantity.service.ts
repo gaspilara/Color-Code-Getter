@@ -19,7 +19,11 @@ export class QuantityService {
 
   constructor() {
     this.initComponents();
-    this.createComponent(1);
+    // this.createComponent(1);
+  }
+
+  setQuantity(quantity: number) {
+    this.quantity.subscribe( q => this._quantity = quantity );
   }
   
   initComponents() {
@@ -41,7 +45,7 @@ export class QuantityService {
         this._components.filter( r => {
           r.display = r.id === quantity ? true : false
           if (r.id === 1) r.display = true;
-          console.log (r);
+          // console.log (r);
         }); break; 
       } 
       case 2: { 

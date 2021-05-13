@@ -35,12 +35,9 @@ imports: [
   providers: [],
   bootstrap: [
     BoardComponent,
-    QuantitySwitcherComponent,
     SquaresContainerComponent,
     SquareComponent,
-    ButtonQuantityComponent,
     InfoColorComponent,
-    InputColorComponent,
   ]
 })
 export class AppModule { }

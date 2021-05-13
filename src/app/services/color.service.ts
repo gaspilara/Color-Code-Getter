@@ -1,22 +1,44 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { Color } from '../models/color.model'
+import { BehaviorSubject, Observable, of } from 'rxjs';
+import { ColorModel } from '../models/color.model';
+import { COLORS } from '../models/color.json'
 
 @Injectable({
   providedIn: 'root'
 })
 export class ColorService {
 
-  // public _color: string = '';
-  // private _colorSubject: BehaviorSubject<string> = new BehaviorSubject(this._color);
-  // public color: Observable<string> = this._colorSubject.asObservable();
-
-  color: Color;
+  public _color: ColorModel = new ColorModel();
+  private _colorSubject: BehaviorSubject<ColorModel> = new BehaviorSubject(this._color);
+  public color: Observable<ColorModel> = this._colorSubject.asObservable();
 
   constructor() {
-    this.color = new Color();
+    this.color.subscribe( color => { 
+      this._color = color 
+      console.log(color);
+    });
+    this.setAleatoryColor();
+    console.log("_____________________________");
+    console.log(this._color);
   }
 
+  getColor(): Observable<ColorModel> {
+    return of(COLORS[0]);
+  }
+
+  setAleatoryColor() {
+    this._color = {
+      // the magic of Math struck (16777215 == ffffff in decimal)
+      hex: Math.floor(Math.random()*16777215).toString(16),
+      rgb: { 
+        r: Math.floor(Math.random() * 255) + 1, 
+        g: Math.floor(Math.random() * 255) + 1, 
+        b: Math.floor(Math.random() * 255) + 1
+      }
+    }
+  }
+
+/*
   convertToRGB(hex: string): any {
     hex.charAt(0) === '#' ? hex = hex.substr(1) : '';
     (hex.length < 2) || (hex.length > 6) ? '' : '';
@@ -40,5 +62,5 @@ export class ColorService {
     // return ('RGB ('+r+', '+g+', '+b+')');
     return [r, g, b];
   }
-
+*/
 }

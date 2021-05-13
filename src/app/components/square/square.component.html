@@ -1,13 +1,13 @@
 <div class="bg" name="bg" [ngStyle]="{ 'backgroundColor': color.hex }" [ngClass]="{ 'display-none': !square.display }">
 
   <div class="info-color-container">
-
-    <info-color-component [toCopy]="rgbToCopy" [colorValue]="color.RGB" > </info-color-component>
+    <info-color-component [toCopy]="rgbToCopy" [colorValue]="thisColor" > </info-color-component>
     <info-color-component [toCopy]="color.hex" [colorValue]="color.hex" > </info-color-component>
-
   </div>
 
-  <input class="btnColor" type="color" [(ngModel)]="color.hex" [ngModel]="onColorChange()">
+  <input class="btnColor" type="color" [(ngModel)]="color.hex" >
+  <!-- <input class="btnColor" type="color" [(ngModel)]="color.hex" [ngModel]="onColorChange()"> -->
+
   <!-- <input-color-component></input-color-component> -->
 
 </div>

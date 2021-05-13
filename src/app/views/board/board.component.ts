@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ColorService } from '../../services/color.service';
+import { QuantityService } from '../../services/quantity.service';
 
 @Component({
   selector: 'board-component',
@@ -7,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoardComponent implements OnInit {
 
-  constructor() {
+  constructor(private colorService: ColorService) {
   }
 
   ngOnInit(): void {
+    this.colorService.setAleatoryColor();
   }
 
 }

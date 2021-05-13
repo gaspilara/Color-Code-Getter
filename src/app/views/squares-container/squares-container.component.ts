@@ -15,16 +15,12 @@ export class SquaresContainerComponent implements OnInit {
   quantity: number = 0;
 
   constructor(private quantityService: QuantityService) {
+    this.quantityService.setQuantity(1);
+    this.quantityService.quantity.subscribe( q => this.quantity = q);
+    this.quantityService.components.subscribe(cc => this.components = cc);
   }
-
+  
   ngOnInit(): void {
-    // this.quantityService.createComponent(this.quantity);
-    this.quantityService.quantity.subscribe(data => {
-      this.quantity = data;
-    })
-    this.quantityService.components.subscribe(data => {
-      this.components = data;
-    })
   }
 
 }

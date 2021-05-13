@@ -4,7 +4,13 @@
     [cdkCopyToClipboard]="toCopy" 
     (click)="showCopyMotion()" 
   >
-    <p [ngStyle]="{ 'transform': scaleValue }">{{colorValue}}</p>
+  <p [ngStyle]="{ 'transform': scaleValue }">{{colorValue}}</p>
+    <!-- <<ng-container *ngIf="isHexa">
+      <p [ngStyle]="{ 'transform': scaleValue }">#{{colorValue}}</p>
+    </ng-container>
+    <ng-container *ngIf="!isHexa">
+      <p [ngStyle]="{ 'transform': scaleValue }">RGB ({{colorValue}})</p>
+    </ng-container> -->
   </div>
 
 </div>
